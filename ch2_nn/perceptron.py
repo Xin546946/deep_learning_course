@@ -57,3 +57,4 @@ while(num_right_classified != len(points)):
 line_y = - w[0] / (w[1] + 1e-6) * line_x - b / (w[1] +1e-6) 
 plt.plot(line_x, line_y, '-')
 plt.draw()           
+plt.show()
