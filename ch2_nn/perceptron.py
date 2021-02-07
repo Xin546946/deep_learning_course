@@ -1,7 +1,6 @@
 #   This code is for test perceptron in the lecture 
 import numpy as np
 import matplotlib.pyplot as plt
-import time
 
 # given input data M1 = [(3,3) ,+1], M2 = [(4,3), -1], M3 = [(1,1),-1]
 points = np.array([[3,3],[4,3],[1,1]])
