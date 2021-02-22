@@ -31,10 +31,13 @@ num_right_classified = 0
 axes = plt.gca()
 line_x = np.array(axes.get_xlim())
 line = None 
+num_iter = 0
 
 while(num_right_classified != len(points)):
+    
     num_right_classified = 0
     for point,label in zip(points,labels):
+        num_iter = num_iter + 1
         if((np.dot(w,point) + b) * label <= 0):
            
             if(line):
@@ -44,7 +47,7 @@ while(num_right_classified != len(points)):
             w = w + learning_rate * label * point
             b = b + learning_rate * label  
             
-            print("Misclassified point: {}".format(point), "@@Current weight: {}, bias: {}.".format(w,b)) 
+            print(" iteration, ","Misclassified point: {}".format(point), "@@Current weight: {}, bias: {}.".format(w,b)) 
             
             line_y = - w[0] / (w[1] + 1e-6) * line_x - b / (w[1] +1e-6) 
             
