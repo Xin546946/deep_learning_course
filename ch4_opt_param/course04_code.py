@@ -111,10 +111,10 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 optimizer = optim.Adamax(model.parameters(), lr=0.002, betas=(0.9, 0.999), eps=1e-08, weight_decay=0)
 
 # 优化器9 SparseAdam 针对稀疏张量的一种“阉割版”Adam优化方法。
-optimizer = optim.SparseAdam(model.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-08)
+# optimizer = optim.SparseAdam(model.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-08)
 
 # 优化器10 实现L-BFGS（Limited-memory Broyden–Fletcher–Goldfarb–Shanno）优化方法。L-BFGS属于拟牛顿算法。L-BFGS是对BFGS的改进，特点就是节省内存。
-optimizer = optim.LBFGS(model.parameters(), lr=1, max_iter=20, max_eval=None, tolerance_grad=1e-05, tolerance_change=1e-09, history_size=100, line_search_fn=None)
+# optimizer = optim.LBFGS(model.parameters(), lr=1, max_iter=20, max_eval=None, tolerance_grad=1e-05, tolerance_change=1e-09, history_size=100, line_search_fn=None)
 
 
 
@@ -163,7 +163,7 @@ def test():
         100. * correct / len(test_loader.dataset)))
 
 
-for epoch in range(1, 30):
+for epoch in range(1, 3):
     print("Epoch:"+str(epoch))
     train(epoch)
     test()
